@@ -1,15 +1,34 @@
-# Project name: aws-net-core-examples
+# aws-net-core-examples
 
 ## Description: 
-Basic CRUD for Amazon S3 Bucket with ASP.NET CORE
+  ### Basic operations in Amazon S3 Bucket with .NET 6 including:
+  	- Creating a bucket
+	- Deleting a bucket
+	- Upload file to a bucket
+	- Deleting file from a bucket
+	- Get file from bucket
 
-## Instalation:
+## Tools used
+  - Visual Studio 2022 (https://visualstudio.microsoft.com/vs/)
+  - aws-cli (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+  - .NET 6 (https://dotnet.microsoft.com/en-us/download/dotnet/6.0) 
+
+## Instalation and Usage:
   1- Clone the repo
   
-  2- Build your project to install the neccessary nuget packages
+  2- Build your project to install the necessary nuget packages
+
+  3- Download and install the "aws-cli" tool (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+  
+  4- Check everything was installed correctly with "aws --version" command.
+  
+  5- Open a cmd console and type: "aws configure". Then put your credentials and region. After that in "C:\Users\YourUserName\.aws" folder two files will be created, config with the region and credentials with your aws keys.
+  
+  6- Launch the Api project and read the swagger documentation.
   
 ### OPTIONAL 
-  If you want to create yourself this project from scratch, you will need to install in `Package Manager Console`:
+  If you want to create yourself you need to follow steps 3 to 6 in order to install "aws-cli". 
+  Then create a project from scratch, you will need to open th `Package Manager Console` and run the following commands:
   
 	Install-package AWSSDK.Extensions.NETCORE.Setup
 	
@@ -17,29 +36,7 @@ Basic CRUD for Amazon S3 Bucket with ASP.NET CORE
   
 ##### *NOW YOU CAN USE IT!*
 
-## USAGE:
-  1- Run your project
-  
-  2- Open postman (or equal) and create "post requests" with the specified parameters in the Controller
-  
-  3- Create the directory: `C:\Users\username\.aws`
-  
-  *If you want to create a directory in windows with '.' in the beginning of the name you must create it like this: `.aws.`*
-  
-  *Windows will delete the second '.' and will keep the first one.*
-  
-  4- Inside your directory create a file (with no extension) named: `credentials`
-  
-  5- Inside the file copy the code wthat you can find in this repo in a file named: `credentials_Example`
-  
-*You still can set both: `aws_access_key_id` and `aws_secret_access_key` in your settings, but for security, aws recomends to use this alternative for security purposes*
-
 ## LICENSE:
   GPL LICENSE
 
 #### *Learning Purposes*
- 
- 
-  
-  
-
