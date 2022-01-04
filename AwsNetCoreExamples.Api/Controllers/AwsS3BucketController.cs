@@ -1,29 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using S3TestWebApi.Services;
-using System.Threading.Tasks;
+﻿using AwsNetCoreExamples.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace S3TestWebApi.Controllers
+namespace AwsNetCoreExamples.Api.Controllers
 {
     [Produces("application/json")]
-    [Route("api/S3Bucket")]
-    public class S3BucketController : Controller
+    [Route("api/AwsS3Bucket")]
+    public class AwsS3BucketController : Controller
     {
-        private readonly IS3Service _service;
+        private readonly IAwsS3Service _service;
 
-        public S3BucketController(IS3Service service)
+        public AwsS3BucketController(IAwsS3Service service)
         {
             _service = service;
         }
 
         [HttpPost("CreateBucket/{bucketName}")]
-        public async Task<IActionResult> CreateBucket([FromRoute] string bucketName)
+        public async Task<IActionResult> CreateBucket(string bucketName)
         {
             var response = await _service.CreateBucketAsync(bucketName);
 
             return Ok(response);
         }
 
-        [HttpPost("DeleteBucket/{bucketName}")]
+        [HttpDelete("DeleteBucket/{bucketName}")]
         public async Task<IActionResult> DeleteBucket([FromRoute] string bucketName)
         {
             var response = await _service.DeleteBucketAsync(bucketName);
@@ -32,23 +31,23 @@ namespace S3TestWebApi.Controllers
         }
 
         [HttpPost("AddFile/{bucketName}")]
-        public async Task<IActionResult> AddFileToS3([FromRoute] string bucketName)
+        public async Task<IActionResult> AddFileToS3(string bucketName)
         {
             await _service.UploadFileAsync(bucketName);
 
             return Ok();
         }
 
-        [HttpPost("GetFile/{bucketName}/{keyName}")]
-        public async Task<IActionResult> GetObjectFromS3([FromRoute] string bucketName, string keyName = null)
+        [HttpGet("GetFile/{bucketName}/{keyName}")]
+        public async Task<IActionResult> GetObjectFromS3(string bucketName, string keyName = null)
         {
             await _service.GetObjectFromS3Async(bucketName, keyName);
 
             return Ok();
         }
 
-        [HttpPost("DeleteFile/{bucketName}/{keyName}")]
-        public async Task<IActionResult> DeleteObjectFromS3([FromRoute] string bucketName, string keyName = null)
+        [HttpDelete("DeleteFile/{bucketName}/{keyName}")]
+        public async Task<IActionResult> DeleteObjectFromS3(string bucketName, string keyName = null)
         {
             await _service.DeleteObjectFromS3Async(bucketName, keyName);
 

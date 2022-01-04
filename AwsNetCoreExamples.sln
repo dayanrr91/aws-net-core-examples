@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsNetCoreExamples.Services", "AwsNetCoreExamples.Services\AwsNetCoreExamples.Services.csproj", "{BA6E933B-7D9F-4472-8598-7D8B3642F15C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsNetCoreExamples.Api", "AwsNetCoreExamples.Api\AwsNetCoreExamples.Api.csproj", "{8D563854-6B77-492B-8E78-EC7DD0A49FFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA6E933B-7D9F-4472-8598-7D8B3642F15C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6E933B-7D9F-4472-8598-7D8B3642F15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6E933B-7D9F-4472-8598-7D8B3642F15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6E933B-7D9F-4472-8598-7D8B3642F15C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D563854-6B77-492B-8E78-EC7DD0A49FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D563854-6B77-492B-8E78-EC7DD0A49FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D563854-6B77-492B-8E78-EC7DD0A49FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D563854-6B77-492B-8E78-EC7DD0A49FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC1556C1-4B18-4AAF-B41F-0E3DBE5A3017}
+	EndGlobalSection
+EndGlobal
